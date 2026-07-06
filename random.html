@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cepat Sembuh, Meisya Ayu 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffeef8, #fff0f5, #ffe4e1, #fdfbfb);
+            font-family: 'Quicksand', sans-serif;
+            overflow: hidden;
+        }
+
+        /* Animasi Hati Melayang di Background */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -50px;
+            font-size: 24px;
+            color: #ff69b4;
+            animation: floatUp 8s linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+            100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Kartu Utama */
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(255, 105, 180, 0.15);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            border: 2px solid rgba(255, 182, 193, 0.4);
+            animation: fadeIn 1.5s ease-in-out;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .icon-top {
+            font-size: 40px;
+            margin-bottom: 10px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .title {
+            font-family: 'Quicksand', sans-serif;
+            color: #d63384;
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .name {
+            font-family: 'Dancing Script', cursive;
+            color: #c71585;
+            font-size: 3em;
+            margin: 10px 0 20px 0;
+            text-shadow: 2px 2px 5px rgba(199, 21, 133, 0.2);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 5px rgba(255, 105, 180, 0.3); }
+            to { text-shadow: 0 0 15px rgba(255, 105, 180, 0.6), 0 0 20px rgba(255, 182, 193, 0.4); }
+        }
+
+        .message {
+            color: #555;
+            font-size: 1.05em;
+            line-height: 1.8;
+            margin: 20px 0;
+            font-style: italic;
+            text-align: left;
+            padding: 0 10px;
+        }
+
+        .message p {
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            color: #d63384;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .signature {
+            margin-top: 30px;
+            color: #c71585;
+            font-weight: 600;
+            font-size: 1.2em;
+            border-top: 1px dashed #ffb6c1;
+            padding-top: 20px;
+        }
+
+        .signature span {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Hati Melayang -->
+    <div class="floating-hearts" id="heartsContainer"></div>
+
+    <!-- Kartu Pesan -->
+    <div class="card">
+        <div class="icon-top">🌸💖🌸</div>
+        <div class="title">Cepat Sembuh Ya,</div>
+        <div class="name">Meisya Ayu</div>
+        
+        <div class="message">
+            <p>Untuk kekasihku tersayang,</p>
+            <p>
+                Aku tahu hari ini tubuhmu sedang tidak baik-baik saja, dan melihatmu lelah membuat hatiku ikut terasa sakit. Tolong jangan memaksakan diri ya, sayang. Dunia bisa menunggu, tapi kesehatannya adalah yang paling utama.
+            </p>
+            <p>
+                Istirahat yang cukup, minum air hangat, dan jangan lupa makan. Bayangkan aku sedang memelukmu dan mengusap kepalamu dengan lembut saat ini. 
+            </p>
+            <p>
+                <span class="highlight">Cepat sembuh, bidadariku.</span> Aku selalu berdoa dan menantikan senyum manismu kembali seperti sedia kala. Aku sayang kamu, lebih dari yang bisa aku ucapkan.
+            </p>
+        </div>
+
+        <div class="signature">
+            Dengan seluruh cinta,<br>
+            <span>Kekasihmu 💌</span>
+        </div>
+    </div>
+
+    <script>
+        // Script untuk membuat animasi hati melayang di background secara acak
+        const heartsContainer = document.getElementById('heartsContainer');
+        const heartSymbols = ['💖', '💗', '💕', '🌸', '✨'];
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+            
+            // Posisi acak di layar
+            heart.style.left = Math.random() * 100 + 'vw';
+            // Ukuran acak
+            heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+            // Durasi animasi acak
+            heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+            // Delay acak
+            heart.style.animationDelay = Math.random() * 2 + 's'; 
+            
+            heartsContainer.appendChild(heart);
+
+            // Hapus elemen hati setelah animasi selesai agar tidak membebani memori
+            setTimeout(() => {
+                heart.remove();
+            }, 10000);
+        }
+
+        // Membuat hati baru setiap 600ms
+        setInterval(createHeart, 600);
+    </script>
+</body>
+</html>
